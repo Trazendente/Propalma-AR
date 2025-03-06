@@ -43,6 +43,8 @@
         .button-style {
             background-color: #0e7139; /* Fondo blanco */
             color: #ffffff; /* Color del texto en negro */
+		 border: 1px solid #ffffff; /* Borde dorado */
+            border-radius: 40px; /* Ligeramente redondeado */
             padding: 10px 20px; /* Espaciado interno */
             font-size: 16px; /* Tamaño de la fuente */
             cursor: pointer; /* Cambiar cursor al pasar */
@@ -84,7 +86,7 @@
     <canvas id="video-canvas" style="width:100%; height:100%; object-fit:cover; position:absolute"></canvas>
      <div id="startARDiv" class="ctaDiv">
         <select id="chooseCamSel" style="display: none;" onchange="SelectCam()"></select>
-       <div style="position: fixed; bottom: 70px; left: 50%; transform: translateX(-50%); width: 80vw; color: white; text-align: center; border: 1px solid white; padding: 10px; background-color: rgba(14, 113, 57, 0.7);
+       <div style="position: fixed; bottom: 60px; left: 50%; transform: translateX(-50%); width: 80vw; color: white; text-align: center; border: 2px solid white; border-radius: 10px; padding: 10px; background-color: rgba(14, 113, 57, 0.7);
 ">
     <p>Esta experiencia de Realidad Aumentada requiere acceso a la cámara y los sensores de movimiento de tu dispositivo.</p>
 </div>
@@ -140,7 +142,6 @@
                     return;
                 }
                 
-                await LoadWebcams();
                 document.getElementById("startARButton").style.display = "block";
                 window.permissionsGranted = IsCameraPermissionGranted();
             }
